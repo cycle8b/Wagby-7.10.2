@@ -1,0 +1,5 @@
+model/inititem/@id=3
+model/inititem/text()=承認
+model/inititem/text_en()=Approval
+model/modelitem/@__linenumber=3
+presentation/displayitem/@textarea2labelForShowList=○

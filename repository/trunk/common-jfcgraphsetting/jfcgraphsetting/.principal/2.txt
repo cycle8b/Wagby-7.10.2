@@ -1,0 +1,3 @@
+acl/principal/@content=システム管理者
+acl/principal/@id=all
+acl/principal/@no=2

@@ -1,0 +1,15 @@
+acl/@id=jfcwfnodeType_m
+action/updatelist/@use_copy_at_parent_model_copy=
+createEditpage=
+model/@build=○
+model/@description=ワークフローノードタイプ
+model/@id=jfcwfnodeType_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcworkflow.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcwfnodeType_m
+presentation/displaymap/layout=下
+system/@key=01a1rswY1XlKf+k8uaTMmNMWeB5-XKHdV+--L79EtJy8
+system/@lastupdated=1482313195238555
+system/@version=7.10.2

@@ -1,0 +1,13 @@
+acl/@id=jfcmailtemplate_popauthprotocol_m
+createEditpage=
+model/@build=○
+model/@description=
+model/@id=jfcmailtemplate_popauthprotocol_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcmailtemplate.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcmailtemplate_popauthprotocol_m
+system/@key=01DK+4ttQ3Mr0WOfWoV3nmgBwq013AILayORjx+QqM
+system/@lastupdated=1482313195031440
+system/@version=7.10.2

@@ -1,0 +1,5 @@
+model/inititem/@id=2
+model/inititem/text()=SMTP over SSL
+model/inititem/text_en()=
+model/modelitem/@__linenumber=2
+presentation/displayitem/@textarea2labelForShowList=○

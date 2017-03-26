@@ -1,0 +1,5 @@
+model/inititem/@id=6
+model/inititem/text()=差し戻し
+model/inititem/text_en()=Return
+model/modelitem/@__linenumber=6
+presentation/displayitem/@textarea2labelForShowList=○

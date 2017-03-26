@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcmailtemplate">
+
+    <import class="Jfcmailtemplate"/>
+
+    <class name="Jfcmailtemplate" table="&quot;jfcmailtemplate&quot;">
+        <id name="templateid_">
+            <column name="&quot;templateid&quot;"/>
+        </id>
+
+        <property name="createtype_">
+            <column name="&quot;createtype&quot;" not-null="true"/>
+        </property>
+
+        <property name="targetmodel_">
+            <column name="&quot;targetmodel&quot;"/>
+        </property>
+
+        <property name="description_">
+            <column name="&quot;description&quot;" not-null="true"/>
+        </property>
+
+        <property name="mailhost_">
+            <column name="&quot;mailhost&quot;"/>
+        </property>
+
+        <property name="protocol_">
+            <column name="&quot;protocol&quot;"/>
+        </property>
+
+        <property name="auth_">
+            <column name="&quot;auth&quot;"/>
+        </property>
+
+        <property name="authUser_">
+            <column name="&quot;auth_user&quot;"/>
+        </property>
+
+        <property name="authPassword_">
+            <column name="&quot;auth_password&quot;"/>
+        </property>
+
+        <property name="popauthMailhost_">
+            <column name="&quot;popauth_mailhost&quot;"/>
+        </property>
+
+        <property name="popauthProtocol_">
+            <column name="&quot;popauth_protocol&quot;"/>
+        </property>
+
+        <property name="popauthUseapop_">
+            <column name="&quot;popauth_useapop&quot;"/>
+        </property>
+
+        <property name="popauthAuthUser_">
+            <column name="&quot;popauth_auth_user&quot;"/>
+        </property>
+
+        <property name="popauthAuthPassword_">
+            <column name="&quot;popauth_auth_password&quot;"/>
+        </property>
+
+        <property name="subject_">
+            <column name="&quot;subject&quot;" not-null="true"/>
+        </property>
+
+        <property name="from_">
+            <column name="&quot;fromaddress&quot;" not-null="true"/>
+        </property>
+
+        <list name="to_" table="&quot;jfcmailtemplate$to&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;templateid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;toaddressjshid&quot;"/>
+            </index>
+            <element type="string">
+                <column name="&quot;toaddress&quot;" not-null="true"/>
+            </element>
+        </list>
+
+        <property name="individualSend_">
+            <column name="&quot;individualSend&quot;"/>
+        </property>
+
+        <list name="cc_" table="&quot;jfcmailtemplate$cc&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;templateid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;ccaddressjshid&quot;"/>
+            </index>
+            <element type="string">
+                <column name="&quot;ccaddress&quot;"/>
+            </element>
+        </list>
+
+        <list name="bcc_" table="&quot;jfcmailtemplate$bcc&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;templateid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;bccaddressjshid&quot;"/>
+            </index>
+            <element type="string">
+                <column name="&quot;bccaddress&quot;"/>
+            </element>
+        </list>
+
+        <property name="attachment_">
+            <column name="&quot;attachment&quot;"/>
+        </property>
+
+        <property name="attachmentMaxSize_">
+            <column name="&quot;attachment_max_size&quot;"/>
+        </property>
+
+        <list name="mheader_" table="&quot;jfcmailtemplate$mheader&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;templateid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;mheaderjshid&quot;"/>
+            </index>
+            <one-to-many class="Mheader"/>
+        </list>
+
+        <property name="mailtype_">
+            <column name="&quot;mailtype&quot;"/>
+        </property>
+
+        <property name="body_">
+            <column name="&quot;body&quot;" sql-type="VARCHAR(4000)"/>
+        </property>
+
+        <property name="htmlbodyrich_">
+            <column name="&quot;htmlbodyrich&quot;" sql-type="VARCHAR(4000)"/>
+        </property>
+
+        <property name="htmlbodyplain_">
+            <column name="&quot;htmlbodyplain&quot;" sql-type="VARCHAR(4000)"/>
+        </property>
+
+        <property name="emlfile_">
+            <column name="&quot;emlfile&quot;"/>
+        </property>
+
+        <property name="emlfileJshfilename_">
+            <column name="&quot;emlfile_jshfilename&quot;"/>
+        </property>
+
+    </class>
+
+    <class name="Mheader" table="&quot;jfcmailtemplate$mheader&quot;">
+        <composite-id>
+            <key-property name="templateid_">
+                <column name="&quot;templateid&quot;"/>
+            </key-property>
+            <key-property name="mheaderjshid_">
+                <column name="&quot;mheaderjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="hid_" formula="&quot;mheaderjshid&quot;+1"/>
+
+        <property name="name_">
+            <column name="&quot;name&quot;"/>
+        </property>
+
+        <property name="value_">
+            <column name="&quot;value&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

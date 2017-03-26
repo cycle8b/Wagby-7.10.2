@@ -1,0 +1,2 @@
+acl/principal/@content=フロー状態閲覧
+acl/principal/@id=jshparam_workstate_show

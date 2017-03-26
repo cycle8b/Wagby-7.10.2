@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcportal">
+
+    <import class="Jfcportal"/>
+
+    <class name="Jfcportal" table="&quot;jfcportal&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="portalTabName_">
+            <column name="&quot;portalTabName&quot;"/>
+        </property>
+
+        <list name="usePortal_" table="&quot;jfcportal$usePortal&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;usePortaljshid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;usePortal&quot;"/>
+            </element>
+        </list>
+
+        <property name="displayArea_">
+            <column name="&quot;displayArea&quot;" not-null="true"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

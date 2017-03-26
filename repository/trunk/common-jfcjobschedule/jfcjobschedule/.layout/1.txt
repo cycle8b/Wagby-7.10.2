@@ -1,0 +1,4 @@
+model/displayitemgroup/@label=スケジュール
+model/displayitemgroup/@labelwidth=
+model/displayitemgroup/@separate1=横→
+model/displayitemgroup/@separate2=14%,14%,14%,14%,14%,14%,14%

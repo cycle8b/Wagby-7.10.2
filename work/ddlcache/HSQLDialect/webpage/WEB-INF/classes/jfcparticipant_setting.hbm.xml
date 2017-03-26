@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcparticipant_setting">
+
+    <import class="JfcparticipantSetting"/>
+
+    <class name="JfcparticipantSetting" table="&quot;jfcprtcpnt_sttng&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="name_">
+            <column name="&quot;name&quot;" not-null="true"/>
+        </property>
+
+        <property name="description_">
+            <column name="&quot;description&quot;"/>
+        </property>
+
+        <property name="flowName_">
+            <column name="&quot;flow_name&quot;" not-null="true"/>
+        </property>
+
+        <list name="participants_" table="&quot;jfcprtcpnt_sttng$participants&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;participantsjshid&quot;"/>
+            </index>
+            <one-to-many class="Participants"/>
+        </list>
+
+    </class>
+
+    <class name="Participants" table="&quot;jfcprtcpnt_sttng$participants&quot;">
+        <composite-id>
+            <key-property name="id_">
+                <column name="&quot;id&quot;"/>
+            </key-property>
+            <key-property name="participantsjshid_">
+                <column name="&quot;participantsjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="participantId_" formula="&quot;participantsjshid&quot;+1"/>
+
+        <property name="layerId_">
+            <column name="&quot;layer_id&quot;"/>
+        </property>
+
+        <property name="nodeType_">
+            <column name="&quot;node_type&quot;"/>
+        </property>
+
+        <property name="nodeName_">
+            <column name="&quot;node_name&quot;"/>
+        </property>
+
+        <property name="participantName_">
+            <column name="&quot;participant_name&quot;"/>
+        </property>
+
+        <property name="participantGroupid_">
+            <column name="&quot;participant_groupid&quot;"/>
+        </property>
+
+        <property name="participantScript_">
+            <column name="&quot;participant_script&quot;" sql-type="CLOB"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

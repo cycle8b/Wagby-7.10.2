@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcgraphsetting">
+
+    <import class="Jfcgraphsetting"/>
+
+    <class name="Jfcgraphsetting" table="&quot;jfcgraphsetting&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="screenid_">
+            <column name="&quot;screenid&quot;" unique-key="jfcuk_jfcgraphsetting_sua"/>
+        </property>
+
+        <property name="userid_">
+            <column name="&quot;userid&quot;" unique-key="jfcuk_jfcgraphsetting_sua"/>
+        </property>
+
+        <property name="allsetting_">
+            <column name="&quot;allsetting&quot;" unique-key="jfcuk_jfcgraphsetting_sua"/>
+        </property>
+
+        <property name="plotTypeAxis_">
+            <column name="&quot;plotTypeAxis&quot;" sql-type="CLOB"/>
+        </property>
+
+        <property name="plotTypeGraph_">
+            <column name="&quot;plotTypeGraph&quot;" sql-type="CLOB"/>
+        </property>
+
+        <property name="plotTypeColor_">
+            <column name="&quot;plotTypeColor&quot;" sql-type="CLOB"/>
+        </property>
+
+        <property name="graphType_">
+            <column name="&quot;graphType&quot;"/>
+        </property>
+
+        <property name="theme_">
+            <column name="&quot;theme&quot;"/>
+        </property>
+
+        <property name="chartWidth_">
+            <column name="&quot;chartWidth&quot;"/>
+        </property>
+
+        <property name="chartHeight_">
+            <column name="&quot;chartHeight&quot;"/>
+        </property>
+
+        <property name="pieFontSize_">
+            <column name="&quot;pieFontSize&quot;"/>
+        </property>
+
+        <property name="pieLabelLength_">
+            <column name="&quot;pieLabelLength&quot;"/>
+        </property>
+
+        <property name="graphFontSize_">
+            <column name="&quot;graphFontSize&quot;"/>
+        </property>
+
+        <property name="reverseDimension_">
+            <column name="&quot;reverseDimension&quot;"/>
+        </property>
+
+        <property name="sortDimension_">
+            <column name="&quot;sortDimension&quot;"/>
+        </property>
+
+        <property name="useridjshparam_">
+            <column name="&quot;useridjshparam&quot;"/>
+        </property>
+
+        <list name="jgroupidjshparam_" table="&quot;jfcgraphsetting$jgroupidjshparam&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;jgroupidjshparamjshid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;jgroupidjshparam&quot;"/>
+            </element>
+        </list>
+
+    </class>
+
+</hibernate-mapping>

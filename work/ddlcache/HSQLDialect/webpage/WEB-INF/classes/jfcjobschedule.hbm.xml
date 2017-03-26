@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcjobschedule">
+
+    <import class="Jfcjobschedule"/>
+
+    <class name="Jfcjobschedule" table="&quot;jfcjobschedule&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="jobname_">
+            <column name="&quot;jobname&quot;"/>
+        </property>
+
+        <list name="jobparam_" table="&quot;jfcjobschedule$jobparam&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;jobparamjshid&quot;"/>
+            </index>
+            <one-to-many class="Jobparam"/>
+        </list>
+
+        <property name="description_">
+            <column name="&quot;description&quot;" sql-type="VARCHAR(4000)"/>
+        </property>
+
+        <property name="second_">
+            <column name="&quot;second&quot;"/>
+        </property>
+
+        <property name="minute_">
+            <column name="&quot;minute&quot;"/>
+        </property>
+
+        <property name="hour_">
+            <column name="&quot;hour&quot;"/>
+        </property>
+
+        <property name="dayOfMonth_">
+            <column name="&quot;dayOfMonth&quot;"/>
+        </property>
+
+        <property name="month_">
+            <column name="&quot;month&quot;"/>
+        </property>
+
+        <property name="dayOfWeek_">
+            <column name="&quot;dayOfWeek&quot;"/>
+        </property>
+
+        <property name="year_">
+            <column name="&quot;year&quot;"/>
+        </property>
+
+        <list name="enable_" table="&quot;jfcjobschedule$enable&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;enablejshid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;enable&quot;"/>
+            </element>
+        </list>
+
+        <property name="jusername_">
+            <column name="&quot;jusername&quot;" not-null="true"/>
+        </property>
+
+    </class>
+
+    <class name="Jobparam" table="&quot;jfcjobschedule$jobparam&quot;">
+        <composite-id>
+            <key-property name="id_">
+                <column name="&quot;id&quot;"/>
+            </key-property>
+            <key-property name="jobparamjshid_">
+                <column name="&quot;jobparamjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="pid_" formula="&quot;jobparamjshid&quot;+1"/>
+
+        <property name="key_">
+            <column name="&quot;key2&quot;"/>
+        </property>
+
+        <property name="value_">
+            <column name="&quot;value&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,2 @@
+acl/principal/@content=ジョブ管理者
+acl/principal/@id=jfcjobmaster

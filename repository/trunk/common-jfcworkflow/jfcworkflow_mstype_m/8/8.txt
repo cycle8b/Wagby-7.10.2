@@ -1,0 +1,5 @@
+model/inititem/@id=8
+model/inititem/text()=決裁
+model/inititem/text_en()=Final Approval
+model/modelitem/@__linenumber=8
+presentation/displayitem/@textarea2labelForShowList=○

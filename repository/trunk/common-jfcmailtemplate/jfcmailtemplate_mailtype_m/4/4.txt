@@ -1,0 +1,5 @@
+model/inititem/@id=4
+model/inititem/text()=テキストと書式付きテキスト
+model/inititem/text_en()=
+model/modelitem/@__linenumber=4
+presentation/displayitem/@textarea2labelForShowList=○

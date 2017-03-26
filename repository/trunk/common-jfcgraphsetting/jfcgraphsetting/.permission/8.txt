@@ -1,0 +1,2 @@
+acl/permission/@action=menu
+acl/permission/@content=メニュー

@@ -1,0 +1,2 @@
+acl/permission/@action=edit_userid
+acl/permission/@content=アカウント編集

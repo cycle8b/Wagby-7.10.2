@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcbatchjob_execution_params">
+
+    <import class="JfcbatchjobExecutionParams"/>
+
+    <class name="JfcbatchjobExecutionParams" table="BATCH_JOB_EXECUTION_PARAMS">
+        <id name="jobExecutionId_">
+            <column name="JOB_EXECUTION_ID"/>
+        </id>
+
+        <property name="typeCd_">
+            <column name="TYPE_CD" not-null="true"/>
+        </property>
+
+        <property name="keyName_">
+            <column name="KEY_NAME" not-null="true"/>
+        </property>
+
+        <property name="stringVal_">
+            <column name="STRING_VAL"/>
+        </property>
+
+        <property name="dateVal_">
+            <column name="DATE_VAL"/>
+        </property>
+
+        <property name="longVal_">
+            <column name="LONG_VAL"/>
+        </property>
+
+        <property name="doubleVal_">
+            <column name="DOUBLE_VAL"/>
+        </property>
+
+        <property name="identifying_">
+            <column name="IDENTIFYING" not-null="true"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

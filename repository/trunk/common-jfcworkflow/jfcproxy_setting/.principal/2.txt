@@ -1,0 +1,2 @@
+acl/principal/@content=ワークフロー代理設定者
+acl/principal/@id=proxy_setting

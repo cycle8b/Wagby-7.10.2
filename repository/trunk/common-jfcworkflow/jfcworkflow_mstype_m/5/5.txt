@@ -1,0 +1,5 @@
+model/inititem/@id=5
+model/inititem/text()=保留
+model/inititem/text_en()=Hold
+model/modelitem/@__linenumber=5
+presentation/displayitem/@textarea2labelForShowList=○

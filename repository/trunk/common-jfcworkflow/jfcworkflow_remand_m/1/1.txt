@@ -1,0 +1,5 @@
+model/inititem/@id=1
+model/inititem/text()=一つ前へ戻す
+model/inititem/text_en()=Back to previous
+model/modelitem/@__linenumber=1
+presentation/displayitem/@textarea2labelForShowList=○

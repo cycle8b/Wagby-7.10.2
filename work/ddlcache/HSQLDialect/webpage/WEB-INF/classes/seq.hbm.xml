@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.jfc.app.seq">
+
+    <import class="Seq"/>
+
+    <class name="Seq" table="&quot;seq&quot;">
+        <id name="name_">
+            <column name="&quot;name&quot;"/>
+        </id>
+
+        <property name="number_">
+            <column name="&quot;number&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

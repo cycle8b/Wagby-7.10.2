@@ -1,0 +1,13 @@
+acl/@id=jfcworkflow_remand_m
+createEditpage=
+model/@build=○
+model/@description=ワークフロー差し戻し先
+model/@id=jfcworkflow_remand_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcworkflow.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcworkflow_remand_m
+system/@key=01FquOLEcxQ+PSNQGnf6g6Mu7HonVBvG2oxA7YlvG19k
+system/@lastupdated=1482313195026704
+system/@version=7.10.2

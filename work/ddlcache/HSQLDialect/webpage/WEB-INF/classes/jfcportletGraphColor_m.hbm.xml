@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcportletGraphColor_m">
+
+    <import class="JfcportletGraphColorM"/>
+
+    <class name="JfcportletGraphColorM" table="&quot;jfcportletGraphColor_m&quot;">
+        <id name="graphColorID_">
+            <column name="&quot;graphColorID&quot;"/>
+        </id>
+
+        <property name="graphColorName_">
+            <column name="&quot;graphColorName&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

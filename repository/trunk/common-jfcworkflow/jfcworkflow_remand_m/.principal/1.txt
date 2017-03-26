@@ -1,0 +1,2 @@
+acl/principal/@content=マスタ更新者
+acl/principal/@id=jshparam_master

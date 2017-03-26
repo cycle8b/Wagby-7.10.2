@@ -1,0 +1,5 @@
+model/inititem/@id=1
+model/inititem/text()=新規登録
+model/inititem/text_en()=Entry
+model/modelitem/@__linenumber=1
+presentation/displayitem/@textarea2labelForShowList=○

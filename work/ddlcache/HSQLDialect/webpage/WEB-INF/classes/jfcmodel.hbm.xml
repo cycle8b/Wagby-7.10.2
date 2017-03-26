@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcmodel">
+
+    <import class="Jfcmodel"/>
+
+    <class name="Jfcmodel" table="&quot;jfcmodel&quot;">
+        <id name="nameEn_">
+            <column name="&quot;name_en&quot;"/>
+        </id>
+
+        <property name="nameJp_">
+            <column name="&quot;name_jp&quot;"/>
+        </property>
+
+        <property name="kind_">
+            <column name="&quot;kind&quot;"/>
+        </property>
+
+        <property name="createtype_">
+            <column name="&quot;createtype&quot;"/>
+        </property>
+
+        <property name="useWorkflow_">
+            <column name="&quot;use_workflow&quot;"/>
+        </property>
+
+        <property name="size_">
+            <column name="&quot;size2&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

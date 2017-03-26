@@ -1,0 +1,2 @@
+acl/permission/@action=update
+acl/permission/@content=データ更新

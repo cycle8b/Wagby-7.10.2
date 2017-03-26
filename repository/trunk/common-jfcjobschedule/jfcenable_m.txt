@@ -1,0 +1,15 @@
+acl/@id=jfcenable_m
+action/updatelist/@use_copy_at_parent_model_copy=
+createEditpage=
+model/@build=○
+model/@description=有効フラグ
+model/@id=jfcenable_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcjobschedule.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcenable_m
+presentation/displaymap/layout=下
+system/@key=01kSgBMwcO3NMP4Mgr3FZEsm1JKq82vKD01a8bP2TCcM
+system/@lastupdated=1482313195239513
+system/@version=7.10.2

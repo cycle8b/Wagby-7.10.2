@@ -1,0 +1,13 @@
+acl/@id=jfcdispositiontype_m
+createEditpage=
+model/@build=○
+model/@description=帳票ファイル出力方法
+model/@id=jfcdispositiontype_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcreporttemplate.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcdispositiontype_m
+system/@key=01Wzwgrjx-2Q2cQna-qdRRQsBCfnWxBQ
+system/@lastupdated=1482313195235401
+system/@version=7.10.2

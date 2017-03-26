@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.jfc.model.juser">
+
+    <import class="Juser"/>
+
+    <class name="Juser" table="&quot;juser&quot;">
+        <id name="userid_">
+            <column name="&quot;userid&quot;"/>
+        </id>
+
+        <list name="jgroupid_" table="&quot;juser$jgroupid&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;userid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;jgroupidjshid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;jgroupid&quot;"/>
+            </element>
+        </list>
+
+        <property name="passwd_">
+            <column name="&quot;passwd&quot;"/>
+        </property>
+
+        <property name="name_">
+            <column name="&quot;name&quot;"/>
+        </property>
+
+        <property name="valid_">
+            <column name="&quot;valid&quot;"/>
+        </property>
+
+        <property name="level_">
+            <column name="&quot;level2&quot;"/>
+        </property>
+
+        <property name="passwdChangeDate_">
+            <column name="&quot;passwd_change_date&quot;"/>
+        </property>
+
+        <property name="passwdChangeFlag_">
+            <column name="&quot;passwd_change_flag&quot;"/>
+        </property>
+
+        <property name="passwdErrCount_">
+            <column name="&quot;passwd_err_count&quot;"/>
+        </property>
+
+        <list name="oldPasswds_" table="&quot;juser$old_passwds&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;userid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;cid&quot;"/>
+            </index>
+            <element type="string">
+                <column name="&quot;old_passwds&quot;"/>
+            </element>
+        </list>
+
+        <list name="jprincipalId_" table="&quot;juser$jprincipal_id&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;userid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;cid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;jprincipal_id&quot;"/>
+            </element>
+        </list>
+
+        <property name="lastLogonDate_">
+            <column name="&quot;lastLogonDate&quot;"/>
+        </property>
+
+        <list name="rule_" table="&quot;juser$rule&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;userid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;rulejshid&quot;"/>
+            </index>
+            <one-to-many class="Rule"/>
+        </list>
+
+        <list name="preferenceItem_" table="&quot;juser$preference_item&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;userid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;cid&quot;"/>
+            </index>
+            <composite-element class="PreferenceItem">
+                <property name="key_">
+                    <column name="&quot;key2&quot;"/>
+                </property>
+                <property name="content_">
+                    <column name="&quot;content&quot;"/>
+                </property>
+            </composite-element>
+        </list>
+    </class>
+
+    <class name="Rule" table="&quot;juser$rule&quot;">
+        <composite-id>
+            <key-property name="userid_">
+                <column name="&quot;userid&quot;"/>
+            </key-property>
+            <key-property name="rulejshid_">
+                <column name="&quot;rulejshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="rid_" formula="&quot;rulejshid&quot;+1"/>
+
+        <property name="ipaddress_">
+            <column name="&quot;ipaddress&quot;" not-null="true"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

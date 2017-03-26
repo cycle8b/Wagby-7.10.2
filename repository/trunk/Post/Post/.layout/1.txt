@@ -1,0 +1,4 @@
+model/displayitemgroup/@label=L1
+model/displayitemgroup/@separate1=横→
+model/displayitemgroup/@separate2=50%,50%
+model/displayitemgroup/@useFieldSet=

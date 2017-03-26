@@ -1,0 +1,2 @@
+acl/principal/@content=ジョブスケジュール管理者
+acl/principal/@id=jfcschedulemaster

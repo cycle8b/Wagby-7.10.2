@@ -1,0 +1,2 @@
+acl/permission/@action=download
+acl/permission/@content=データダウンロード

@@ -1,0 +1,2 @@
+acl/principal/@content=バッチジョブ閲覧
+acl/principal/@id=bjoperator

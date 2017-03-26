@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcworkstate">
+
+    <import class="Jfcworkstate"/>
+
+    <class name="Jfcworkstate" table="&quot;jfcworkstate&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="flowid_">
+            <column name="&quot;flowid&quot;"/>
+        </property>
+
+        <property name="modelname_">
+            <column name="&quot;modelname&quot;"/>
+        </property>
+
+        <property name="modelpkey_">
+            <column name="&quot;modelpkey&quot;"/>
+        </property>
+
+        <property name="participant_">
+            <column name="&quot;participant&quot;"/>
+        </property>
+
+        <property name="username_">
+            <column name="&quot;username&quot;"/>
+        </property>
+
+        <property name="participantid_">
+            <column name="&quot;participantid&quot;"/>
+        </property>
+
+        <property name="processedLayerid_">
+            <column name="&quot;processed_layerid&quot;"/>
+        </property>
+
+        <property name="waitLayerid_">
+            <column name="&quot;wait_layerid&quot;"/>
+        </property>
+
+        <property name="event_">
+            <column name="&quot;event&quot;"/>
+        </property>
+
+        <property name="comment_">
+            <column name="&quot;comment2&quot;" sql-type="VARCHAR(4000)"/>
+        </property>
+
+        <property name="insertDate_">
+            <column name="&quot;insert_date&quot;"/>
+        </property>
+
+        <property name="updateDate_">
+            <column name="&quot;update_date&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

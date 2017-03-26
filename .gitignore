@@ -1,0 +1,14 @@
+.classpath
+.project
+.settings/
+export/
+LICENSE.pdf
+misc/
+repository/branches/
+repository/trunk_*/
+upload_dir/
+version.txt
+wagbyapp/
+wagbyapp.zip
+wagbydesigner/
+wagby-licensekey.xml

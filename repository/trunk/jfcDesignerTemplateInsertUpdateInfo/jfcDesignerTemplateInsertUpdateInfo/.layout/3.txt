@@ -1,0 +1,4 @@
+model/displayitemgroup/@label=登録・更新情報>*p2
+model/displayitemgroup/@separate1=横→
+model/displayitemgroup/@separate2=50%,50%
+model/displayitemgroup/@useFieldSet=

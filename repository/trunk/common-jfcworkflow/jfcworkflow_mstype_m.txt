@@ -1,0 +1,14 @@
+acl/@id=jfcworkflow_mstype_m
+action/updatelist/@use_copy_at_parent_model_copy=
+createEditpage=
+model/@build=○
+model/@description=ワークフローメール送信タイプ
+model/@id=jfcworkflow_mstype_m
+model/@note=メモ欄\n説明の部分は、jp.jasminesoft.jfc.owfe.core.WEvent enumと同じ順に記述する。
+model/@srcfilename=common-jfcworkflow.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcworkflow_mstype_m
+system/@key=01QYGvP7Rpj2yNHS-fn3C7HYMQ
+system/@lastupdated=1482313195026747
+system/@version=7.10.2

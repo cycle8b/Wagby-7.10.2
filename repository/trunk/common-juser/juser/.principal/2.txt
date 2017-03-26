@@ -1,0 +1,2 @@
+acl/principal/@content=ワークフロー管理者
+acl/principal/@id=jfcworkflowmaster

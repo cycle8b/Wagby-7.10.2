@@ -1,0 +1,13 @@
+acl/@id=jfcmailtemplate_mailtype_m
+createEditpage=
+model/@build=○
+model/@description=mailtypeマスター
+model/@id=jfcmailtemplate_mailtype_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcmailtemplate.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcmailtemplate_mailtype_m
+system/@key=01a-woDehnvF7FZpRC5PYlm32A7GRZ1UE+Y
+system/@lastupdated=1482313195234301
+system/@version=7.10.2

@@ -1,0 +1,14 @@
+acl/@id=jfcmodelkind_m
+action/updatelist/@use_copy_at_parent_model_copy=
+createEditpage=
+model/@build=○
+model/@description=モデル種別
+model/@id=jfcmodelkind_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcrepository.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcmodelkind_m
+system/@key=01UCcPxQPBIvpoJfvSU2rsKbKVe-H6POwfld0
+system/@lastupdated=1482313195023222
+system/@version=7.10.2

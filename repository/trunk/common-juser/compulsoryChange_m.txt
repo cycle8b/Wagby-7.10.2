@@ -1,0 +1,14 @@
+acl/@id=compulsoryChange_m
+action/updatelist/@use_copy_at_parent_model_copy=
+createEditpage=
+model/@build=○
+model/@description=パスワード強制変更
+model/@id=compulsoryChange_m
+model/@note=juserモデルで利用します。
+model/@srcfilename=common-juser.xls
+model/@storage\=static=
+model/@type=master
+modelId=compulsoryChange_m
+system/@key=01+631tIGlDVckHUBNdNZ-+3b4U
+system/@lastupdated=1482313195237968
+system/@version=7.10.2

@@ -1,0 +1,3 @@
+acl/principal/@content=一般ユーザ
+acl/principal/@id=common
+acl/principal/@no=1

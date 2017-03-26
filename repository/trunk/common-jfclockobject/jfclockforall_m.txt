@@ -1,0 +1,16 @@
+acl/@id=jfclockforall_m
+action/updatelist/@use_copy_at_parent_model_copy=
+createEditpage=
+displayaction/@id=jfclockforall_m
+model/@build=○
+model/@description=モデル全体ロックマスタ
+model/@id=jfclockforall_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfclockobject.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfclockforall_m
+presentation/displaymap/layout=下
+system/@key=010DmO8RGj64SU8pkSQAqFJKturNI
+system/@lastupdated=1482313195023592
+system/@version=7.10.2

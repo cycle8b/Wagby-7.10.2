@@ -1,0 +1,13 @@
+acl/@id=jfcportletType_m
+createEditpage=
+model/@build=○
+model/@description=ポートレットタイプ
+model/@id=jfcportletType_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcportal.xls
+model/@storage\=static=○
+model/@type=master
+modelId=jfcportletType_m
+system/@key=01dl+82QUaC6EGRGuWfLNZPnHFK+hzjS6ftOUOk
+system/@lastupdated=1482313195238420
+system/@version=7.10.2

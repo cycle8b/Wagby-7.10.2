@@ -1,0 +1,8 @@
+model/displayitemgroup/@defaulttab=
+model/displayitemgroup/@label=基本>表示設定
+model/displayitemgroup/@labelwidth=25%
+model/displayitemgroup/@separate1=横→
+model/displayitemgroup/@separate2=33%,33%,33%
+model/displayitemgroup/@tabnumber=
+model/displayitemgroup/@tabvisible=
+model/displayitemgroup/@useFieldSet=

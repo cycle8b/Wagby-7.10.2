@@ -1,0 +1,2 @@
+acl/permission/@action=reportlist
+acl/permission/@content=帳票出力

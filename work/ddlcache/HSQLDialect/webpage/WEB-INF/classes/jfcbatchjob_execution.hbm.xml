@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcbatchjob_execution">
+
+    <import class="JfcbatchjobExecution"/>
+
+    <class name="JfcbatchjobExecution" table="BATCH_JOB_EXECUTION">
+        <id name="jobExecutionId_">
+            <column name="JOB_EXECUTION_ID"/>
+        </id>
+
+        <property name="version_">
+            <column name="VERSION"/>
+        </property>
+
+        <property name="jobInstanceId_">
+            <column name="JOB_INSTANCE_ID" not-null="true"/>
+        </property>
+
+        <property name="createTime_">
+            <column name="CREATE_TIME" not-null="true"/>
+        </property>
+
+        <property name="startTime_">
+            <column name="START_TIME"/>
+        </property>
+
+        <property name="endTime_">
+            <column name="END_TIME"/>
+        </property>
+
+        <property name="status_">
+            <column name="STATUS"/>
+        </property>
+
+        <property name="exitCode_">
+            <column name="EXIT_CODE"/>
+        </property>
+
+        <property name="exitMessage_">
+            <column name="EXIT_MESSAGE"/>
+        </property>
+
+        <property name="lastUpdated_">
+            <column name="LAST_UPDATED"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

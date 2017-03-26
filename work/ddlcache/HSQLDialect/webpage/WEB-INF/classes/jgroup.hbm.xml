@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.jfc.model.jgroup">
+
+    <import class="Jgroup"/>
+
+    <class name="Jgroup" table="&quot;jgroup&quot;">
+        <id name="jgroupid_">
+            <column name="&quot;jgroupid&quot;"/>
+        </id>
+
+        <property name="jgroupname_">
+            <column name="&quot;jgroupname&quot;" not-null="true"/>
+        </property>
+
+        <property name="level_">
+            <column name="&quot;level2&quot;"/>
+        </property>
+
+        <property name="valid_">
+            <column name="&quot;valid&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

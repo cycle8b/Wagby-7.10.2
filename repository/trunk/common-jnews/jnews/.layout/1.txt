@@ -1,0 +1,3 @@
+model/displayitemgroup/@label=日付情報
+model/displayitemgroup/@separate1=横→
+model/displayitemgroup/@separate2=50%,50%

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcbatchjob_execution_context">
+
+    <import class="JfcbatchjobExecutionContext"/>
+
+    <class name="JfcbatchjobExecutionContext" table="BATCH_JOB_EXECUTION_CONTEXT">
+        <id name="jobExecutionId_">
+            <column name="JOB_EXECUTION_ID"/>
+        </id>
+
+        <property name="shortContext_">
+            <column name="SHORT_CONTEXT" not-null="true"/>
+        </property>
+
+        <property name="serializedContext_">
+            <column name="SERIALIZED_CONTEXT"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

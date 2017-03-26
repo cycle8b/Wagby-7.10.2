@@ -1,0 +1,14 @@
+acl/@id=jfcmodeluseflag_m
+action/updatelist/@use_copy_at_parent_model_copy=
+createEditpage=
+model/@build=○
+model/@description=利用フラグ
+model/@id=jfcmodeluseflag_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcrepository.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcmodeluseflag_m
+system/@key=01CVRej92bv7m45ZX45dfXB6JnrPdEKTTo
+system/@lastupdated=1482313195238344
+system/@version=7.10.2

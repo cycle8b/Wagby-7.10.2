@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.jfc.model.jholiday">
+
+    <import class="Jholiday"/>
+
+    <class name="Jholiday" table="&quot;jholiday&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="hdate_">
+            <column name="&quot;hdate&quot;" not-null="true"/>
+        </property>
+
+        <property name="name_">
+            <column name="&quot;name&quot;" not-null="true"/>
+        </property>
+
+        <property name="type_">
+            <column name="&quot;type&quot;"/>
+        </property>
+
+        <property name="note_">
+            <column name="&quot;note&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

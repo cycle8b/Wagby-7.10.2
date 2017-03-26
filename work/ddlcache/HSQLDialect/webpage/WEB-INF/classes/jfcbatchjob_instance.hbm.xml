@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcbatchjob_instance">
+
+    <import class="JfcbatchjobInstance"/>
+
+    <class name="JfcbatchjobInstance" table="BATCH_JOB_INSTANCE">
+        <id name="jobInstanceId_">
+            <column name="JOB_INSTANCE_ID"/>
+        </id>
+
+        <property name="version_">
+            <column name="VERSION"/>
+        </property>
+
+        <property name="jobName_">
+            <column name="JOB_NAME" not-null="true"/>
+        </property>
+
+        <property name="jobKey_">
+            <column name="JOB_KEY" not-null="true"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

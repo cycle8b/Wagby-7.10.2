@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcstartworkstate">
+
+    <import class="Jfcstartworkstate"/>
+
+    <class name="Jfcstartworkstate" table="&quot;jfcstartworkstate&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="flowid_">
+            <column name="&quot;flowid&quot;"/>
+        </property>
+
+        <property name="modelname_">
+            <column name="&quot;modelname&quot;"/>
+        </property>
+
+        <property name="showurl_">
+            <column name="&quot;showurl&quot;"/>
+        </property>
+
+        <property name="modelpkeyname_">
+            <column name="&quot;modelpkeyname&quot;"/>
+        </property>
+
+        <property name="modelpkey_">
+            <column name="&quot;modelpkey&quot;"/>
+        </property>
+
+        <property name="createuser_">
+            <column name="&quot;createuser&quot;" not-null="true"/>
+        </property>
+
+        <list name="suspendparticipant_" table="&quot;jfcstartworkstate$suspendparticipant&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;suspendparticipantjshid&quot;"/>
+            </index>
+            <element type="string">
+                <column name="&quot;suspendparticipant&quot;"/>
+            </element>
+        </list>
+
+        <list name="suspendparticipantGroup_" table="&quot;jfcstartworkstate$suspendparticipant_group&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;suspendparticipant_groupjshid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;suspendparticipant_group&quot;"/>
+            </element>
+        </list>
+
+    </class>
+
+</hibernate-mapping>

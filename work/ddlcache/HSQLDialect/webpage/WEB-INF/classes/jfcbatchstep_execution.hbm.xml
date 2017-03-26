@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcbatchstep_execution">
+
+    <import class="JfcbatchstepExecution"/>
+
+    <class name="JfcbatchstepExecution" table="BATCH_STEP_EXECUTION">
+        <id name="stepExecutionId_">
+            <column name="STEP_EXECUTION_ID"/>
+        </id>
+
+        <property name="version_">
+            <column name="VERSION" not-null="true"/>
+        </property>
+
+        <property name="stepName_">
+            <column name="STEP_NAME" not-null="true"/>
+        </property>
+
+        <property name="jobExecutionId_">
+            <column name="JOB_EXECUTION_ID"/>
+        </property>
+
+        <property name="startTime_">
+            <column name="START_TIME" not-null="true"/>
+        </property>
+
+        <property name="endTime_">
+            <column name="END_TIME"/>
+        </property>
+
+        <property name="status_">
+            <column name="STATUS"/>
+        </property>
+
+        <property name="commitCount_">
+            <column name="COMMIT_COUNT"/>
+        </property>
+
+        <property name="readCount_">
+            <column name="READ_COUNT"/>
+        </property>
+
+        <property name="filterCount_">
+            <column name="FILTER_COUNT"/>
+        </property>
+
+        <property name="writeCount_">
+            <column name="WRITE_COUNT"/>
+        </property>
+
+        <property name="readSkipCount_">
+            <column name="READ_SKIP_COUNT"/>
+        </property>
+
+        <property name="writeSkipCount_">
+            <column name="WRITE_SKIP_COUNT"/>
+        </property>
+
+        <property name="processSkipCount_">
+            <column name="PROCESS_SKIP_COUNT"/>
+        </property>
+
+        <property name="rollbackCount_">
+            <column name="ROLLBACK_COUNT"/>
+        </property>
+
+        <property name="exitCode_">
+            <column name="EXIT_CODE"/>
+        </property>
+
+        <property name="exitMessage_">
+            <column name="EXIT_MESSAGE"/>
+        </property>
+
+        <property name="lastUpdated_">
+            <column name="LAST_UPDATED"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+acl/@id=jfcmodelcreatetype_m
+action/updatelist/@use_copy_at_parent_model_copy=
+createEditpage=
+model/@build=○
+model/@description=モデル作成区分
+model/@id=jfcmodelcreatetype_m
+model/@note=メモ欄（ここに自由に記述して下さい)
+model/@srcfilename=common-jfcrepository.xls
+model/@storage\=static=
+model/@type=master
+modelId=jfcmodelcreatetype_m
+system/@key=01+2XtlDkEjJITfru0CufB+FtDuoWHKPfwGlhB+sMnevA
+system/@lastupdated=1482313195235449
+system/@version=7.10.2

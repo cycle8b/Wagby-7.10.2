@@ -1,0 +1,2 @@
+acl/permission/@action=insert
+acl/permission/@content=データ登録

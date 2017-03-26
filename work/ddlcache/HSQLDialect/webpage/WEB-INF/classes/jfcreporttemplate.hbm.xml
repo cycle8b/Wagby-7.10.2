@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcreporttemplate">
+
+    <import class="Jfcreporttemplate"/>
+
+    <class name="Jfcreporttemplate" table="&quot;jfcreporttemplate&quot;">
+        <id name="templateid_">
+            <column name="&quot;templateid&quot;"/>
+        </id>
+
+        <property name="targetmodel_">
+            <column name="&quot;targetmodel&quot;"/>
+        </property>
+
+        <property name="createtype_">
+            <column name="&quot;createtype&quot;" not-null="true"/>
+        </property>
+
+        <property name="description_">
+            <column name="&quot;description&quot;"/>
+        </property>
+
+        <property name="templatefile_">
+            <column name="&quot;templatefile&quot;"/>
+        </property>
+
+        <property name="templatefileJshfilename_">
+            <column name="&quot;templatefile_jshfilename&quot;"/>
+        </property>
+
+        <property name="dispositiontype_">
+            <column name="&quot;dispositiontype&quot;"/>
+        </property>
+
+        <property name="sheetname_">
+            <column name="&quot;sheetname&quot;"/>
+        </property>
+
+        <property name="outputfilename_">
+            <column name="&quot;outputfilename&quot;"/>
+        </property>
+
+        <property name="outputfilename4batch_">
+            <column name="&quot;outputfilename4batch&quot;"/>
+        </property>
+
+        <property name="outputfolder_">
+            <column name="&quot;outputfolder&quot;"/>
+        </property>
+
+        <list name="container_" table="&quot;jfcreporttemplate$container&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;templateid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;containerjshid&quot;"/>
+            </index>
+            <one-to-many class="Container"/>
+        </list>
+
+    </class>
+
+    <class name="Container" table="&quot;jfcreporttemplate$container&quot;">
+        <composite-id>
+            <key-property name="templateid_">
+                <column name="&quot;templateid&quot;"/>
+            </key-property>
+            <key-property name="containerjshid_">
+                <column name="&quot;containerjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="cid_" formula="&quot;containerjshid&quot;+1"/>
+
+        <property name="ctemplatefile_">
+            <column name="&quot;ctemplatefile&quot;"/>
+        </property>
+
+        <property name="ctemplatefileJshfilename_">
+            <column name="&quot;ctemplatefile_jshfilename&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

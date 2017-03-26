@@ -1,0 +1,8 @@
+model/displayitemgroup/@defaulttab=
+model/displayitemgroup/@label=基本
+model/displayitemgroup/@labelwidth=
+model/displayitemgroup/@separate1=縦↓
+model/displayitemgroup/@separate2=
+model/displayitemgroup/@tabnumber=
+model/displayitemgroup/@tabvisible=
+model/displayitemgroup/@useFieldSet=四角で囲む

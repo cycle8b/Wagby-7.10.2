@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcflow_setting">
+
+    <import class="JfcflowSetting"/>
+
+    <class name="JfcflowSetting" table="&quot;jfcflow_setting&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="name_">
+            <column name="&quot;name&quot;" not-null="true"/>
+        </property>
+
+        <property name="description_">
+            <column name="&quot;description&quot;"/>
+        </property>
+
+        <list name="layer_" table="&quot;jfcflow_setting$layer&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;layerjshid&quot;"/>
+            </index>
+            <one-to-many class="Layer"/>
+        </list>
+
+    </class>
+
+    <class name="Layer" table="&quot;jfcflow_setting$layer&quot;">
+        <composite-id>
+            <key-property name="id_">
+                <column name="&quot;id&quot;"/>
+            </key-property>
+            <key-property name="layerjshid_">
+                <column name="&quot;layerjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="layerId_" formula="&quot;layerjshid&quot;+1"/>
+
+        <property name="nodeType_">
+            <column name="&quot;node_type&quot;"/>
+        </property>
+
+        <property name="approvalNum_">
+            <column name="&quot;approval_num&quot;"/>
+        </property>
+
+        <property name="nodeName_">
+            <column name="&quot;node_name&quot;" not-null="true"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

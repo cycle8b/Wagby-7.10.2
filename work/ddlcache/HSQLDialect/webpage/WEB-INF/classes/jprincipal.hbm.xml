@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field" package="jp.jasminesoft.jfc.model.jprincipal">
+    <import class="Jprincipal"/>
+    <class name="Jprincipal" table="&quot;jprincipal&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+        <property name="priority_">
+            <column name="&quot;priority&quot;"/>
+        </property>
+        <property name="valid_">
+            <column name="&quot;valid&quot;"/>
+        </property>
+        <property name="name_">
+            <column name="&quot;name&quot;"/>
+        </property>
+        <property name="content_">
+            <column name="&quot;content&quot;"/>
+        </property>
+        <list name="jpermissionId_" table="&quot;jprincipal$jpermission_id&quot;" cascade="all" lazy="false">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;cid&quot;"/>
+            </index>
+            <element type="integer">
+                <column name="&quot;jpermission_id&quot;"/>
+            </element>
+        </list>
+    </class>
+</hibernate-mapping>

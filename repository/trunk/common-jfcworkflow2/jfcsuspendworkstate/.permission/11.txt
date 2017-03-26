@@ -1,0 +1,2 @@
+acl/permission/@action=select_suspendparticipant
+acl/permission/@content=

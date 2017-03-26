@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcworkflow_setting">
+
+    <import class="JfcworkflowSetting"/>
+
+    <class name="JfcworkflowSetting" table="&quot;jfcworkflow_setting&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="modelname_">
+            <column name="&quot;modelname&quot;" not-null="true"/>
+        </property>
+
+        <property name="participants_">
+            <column name="&quot;participants&quot;" not-null="true"/>
+        </property>
+
+        <property name="remandType_">
+            <column name="&quot;remandType&quot;"/>
+        </property>
+
+        <property name="selectableCode_">
+            <column name="&quot;selectableCode&quot;" sql-type="VARCHAR(4000)"/>
+        </property>
+
+        <list name="eventScriptSetting_" table="&quot;jfcworkflow_setting$eventScript_setting&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;eventScript_settingjshid&quot;"/>
+            </index>
+            <one-to-many class="EventScriptSetting"/>
+        </list>
+
+        <list name="mailSetting_" table="&quot;jfcworkflow_setting$mail_setting&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;mail_settingjshid&quot;"/>
+            </index>
+            <one-to-many class="MailSetting"/>
+        </list>
+
+        <list name="scriptSetting_" table="&quot;jfcworkflow_setting$script_setting&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;script_settingjshid&quot;"/>
+            </index>
+            <one-to-many class="ScriptSetting"/>
+        </list>
+
+        <list name="endbuttonSetting_" table="&quot;jfcworkflow_setting$endbutton_setting&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;endbutton_settingjshid&quot;"/>
+            </index>
+            <one-to-many class="EndbuttonSetting"/>
+        </list>
+
+        <list name="participantsCont_" table="&quot;jfcworkflow_setting$participants_cont&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;participants_contjshid&quot;"/>
+            </index>
+            <one-to-many class="ParticipantsCont"/>
+        </list>
+
+    </class>
+
+    <class name="EventScriptSetting" table="&quot;jfcworkflow_setting$eventScript_setting&quot;">
+        <composite-id>
+            <key-property name="id_">
+                <column name="&quot;id&quot;"/>
+            </key-property>
+            <key-property name="eventScriptSettingjshid_">
+                <column name="&quot;eventScript_settingjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="essid_" formula="&quot;eventScript_settingjshid&quot;+1"/>
+
+        <property name="essnodeId_">
+            <column name="&quot;essnode_id&quot;"/>
+        </property>
+        <property name="essnodeParticipantsjshid_">
+            <column name="&quot;essnode_participantsjshid&quot;"/>
+        </property>
+
+        <list name="esstype_" table="&quot;jfcworkflow_setting$eventScript_setting$esstype&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+                <column name="&quot;eventScript_settingjshid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;esstypejshid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;esstype&quot;"/>
+            </element>
+        </list>
+
+        <property name="eventScript_">
+            <column name="&quot;eventScript&quot;" sql-type="CLOB"/>
+        </property>
+
+    </class>
+
+    <class name="MailSetting" table="&quot;jfcworkflow_setting$mail_setting&quot;">
+        <composite-id>
+            <key-property name="id_">
+                <column name="&quot;id&quot;"/>
+            </key-property>
+            <key-property name="mailSettingjshid_">
+                <column name="&quot;mail_settingjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="msid_" formula="&quot;mail_settingjshid&quot;+1"/>
+
+        <property name="mnodeId_">
+            <column name="&quot;mnode_id&quot;"/>
+        </property>
+        <property name="mnodeParticipantsjshid_">
+            <column name="&quot;mnode_participantsjshid&quot;"/>
+        </property>
+
+        <list name="mstype_" table="&quot;jfcworkflow_setting$mail_setting$mstype&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+                <column name="&quot;mail_settingjshid&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;mstypejshid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;mstype&quot;"/>
+            </element>
+        </list>
+
+        <property name="mailTemplate_">
+            <column name="&quot;mail_template&quot;"/>
+        </property>
+
+    </class>
+
+    <class name="ScriptSetting" table="&quot;jfcworkflow_setting$script_setting&quot;">
+        <composite-id>
+            <key-property name="id_">
+                <column name="&quot;id&quot;"/>
+            </key-property>
+            <key-property name="scriptSettingjshid_">
+                <column name="&quot;script_settingjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="ssid_" formula="&quot;script_settingjshid&quot;+1"/>
+
+        <property name="beginnode_">
+            <column name="&quot;beginnode&quot;" not-null="true"/>
+        </property>
+
+        <property name="condition_">
+            <column name="&quot;condition&quot;" sql-type="VARCHAR(4000)"/>
+        </property>
+
+        <property name="endnode_">
+            <column name="&quot;endnode&quot;" not-null="true"/>
+        </property>
+
+    </class>
+
+    <class name="EndbuttonSetting" table="&quot;jfcworkflow_setting$endbutton_setting&quot;">
+        <composite-id>
+            <key-property name="id_">
+                <column name="&quot;id&quot;"/>
+            </key-property>
+            <key-property name="endbuttonSettingjshid_">
+                <column name="&quot;endbutton_settingjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="esid_" formula="&quot;endbutton_settingjshid&quot;+1"/>
+
+        <property name="esbeginnode_">
+            <column name="&quot;esbeginnode&quot;"/>
+        </property>
+
+        <property name="escondition_">
+            <column name="&quot;escondition&quot;" sql-type="VARCHAR(4000)"/>
+        </property>
+
+    </class>
+
+    <class name="ParticipantsCont" table="&quot;jfcworkflow_setting$participants_cont&quot;">
+        <composite-id>
+            <key-property name="id_">
+                <column name="&quot;id&quot;"/>
+            </key-property>
+            <key-property name="participantsContjshid_">
+                <column name="&quot;participants_contjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="participantId_" formula="&quot;participants_contjshid&quot;+1"/>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,2 @@
+acl/permission/@action=delete
+acl/permission/@content=データ削除

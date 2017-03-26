@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcmodel4dm">
+
+    <import class="Jfcmodel4dm"/>
+
+    <class name="Jfcmodel4dm" table="&quot;jfcmodel4dm&quot;">
+        <id name="nameEn_">
+            <column name="&quot;name_en&quot;"/>
+        </id>
+
+        <property name="nameJp_">
+            <column name="&quot;name_jp&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

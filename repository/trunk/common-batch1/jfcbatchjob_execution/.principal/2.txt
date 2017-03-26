@@ -1,0 +1,2 @@
+acl/principal/@content=バッチジョブ管理
+acl/principal/@id=bjmanager

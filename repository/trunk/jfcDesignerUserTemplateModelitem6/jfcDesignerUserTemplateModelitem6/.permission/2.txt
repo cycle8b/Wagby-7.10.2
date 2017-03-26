@@ -1,0 +1,2 @@
+acl/permission/@action=showlist
+acl/permission/@content=データ検索

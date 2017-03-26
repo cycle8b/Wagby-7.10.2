@@ -1,0 +1,2 @@
+acl/permission/@action=uploadupdate
+acl/permission/@content=アップロード

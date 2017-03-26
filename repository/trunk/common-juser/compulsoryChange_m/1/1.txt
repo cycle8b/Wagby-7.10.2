@@ -1,0 +1,5 @@
+model/inititem/@id=1
+model/inititem/text()=次回ログオン時にパスワードを強制変更させる
+model/inititem/text_en()=Force change password at next logon
+model/modelitem/@__linenumber=1
+presentation/displayitem/@textarea2labelForShowList=○

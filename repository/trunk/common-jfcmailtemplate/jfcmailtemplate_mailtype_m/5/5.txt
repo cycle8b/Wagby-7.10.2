@@ -1,0 +1,5 @@
+model/inititem/@id=5
+model/inititem/text()=テキストとHTMLソース
+model/inititem/text_en()=
+model/modelitem/@__linenumber=5
+presentation/displayitem/@textarea2labelForShowList=○

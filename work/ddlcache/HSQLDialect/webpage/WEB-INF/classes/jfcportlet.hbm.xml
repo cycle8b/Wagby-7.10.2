@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcportlet">
+
+    <import class="Jfcportlet"/>
+
+    <class name="Jfcportlet" table="&quot;jfcportlet&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="portletId_">
+            <column name="&quot;portletId&quot;" not-null="true" unique-key="jfcuk_jfcportlet_portletid"/>
+        </property>
+
+        <property name="portletContentType_">
+            <column name="&quot;portletContentType&quot;"/>
+        </property>
+
+        <property name="portletTitle_">
+            <column name="&quot;portletTitle&quot;"/>
+        </property>
+
+        <property name="portletHeight_">
+            <column name="&quot;portletHeight&quot;" not-null="true"/>
+        </property>
+
+        <property name="portletWidth_">
+            <column name="&quot;portletWidth&quot;" not-null="true"/>
+        </property>
+
+        <list name="portletDisplayFlag_" table="&quot;jfcportlet$portletDisplayFlag&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;portletDisplayFlagjshid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;portletDisplayFlag&quot;"/>
+            </element>
+        </list>
+
+        <property name="portletDisplayOrder_">
+            <column name="&quot;portletDisplayOrder&quot;"/>
+        </property>
+
+        <property name="portletDisplayArea_">
+            <column name="&quot;portletDisplayArea&quot;" not-null="true"/>
+        </property>
+
+        <property name="graphType_">
+            <column name="&quot;graphType&quot;"/>
+        </property>
+
+        <property name="graphColor_">
+            <column name="&quot;graphColor&quot;"/>
+        </property>
+
+        <property name="totalViewNum_">
+            <column name="&quot;totalViewNum&quot;"/>
+        </property>
+
+        <property name="graphXAxisUnit_">
+            <column name="&quot;graphXAxisUnit&quot;"/>
+        </property>
+
+        <property name="graphYAxisUnit_">
+            <column name="&quot;graphYAxisUnit&quot;"/>
+        </property>
+
+        <property name="portletReferenceModelType_">
+            <column name="&quot;portletReferenceModelType&quot;"/>
+        </property>
+
+        <property name="portletReferenceModel_">
+            <column name="&quot;portletReferenceModel&quot;"/>
+        </property>
+
+        <list name="portletParameter_" table="&quot;jfcportlet$portletParameter&quot;" cascade="all-delete-orphan" lazy="true" inverse="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;portletParameterjshid&quot;"/>
+            </index>
+            <one-to-many class="PortletParameter"/>
+        </list>
+
+        <property name="portletContent_">
+            <column name="&quot;portletContent&quot;" sql-type="CLOB"/>
+        </property>
+
+        <property name="portletScript_">
+            <column name="&quot;portletScript&quot;" sql-type="CLOB"/>
+        </property>
+
+    </class>
+
+    <class name="PortletParameter" table="&quot;jfcportlet$portletParameter&quot;">
+        <composite-id>
+            <key-property name="id_">
+                <column name="&quot;id&quot;"/>
+            </key-property>
+            <key-property name="portletParameterjshid_">
+                <column name="&quot;portletParameterjshid&quot;"/>
+            </key-property>
+        </composite-id>
+
+        <property name="pid_" formula="&quot;portletParameterjshid&quot;+1"/>
+
+        <property name="pparamName_">
+            <column name="&quot;pparamName&quot;"/>
+        </property>
+
+        <property name="pvalue_">
+            <column name="&quot;pvalue&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

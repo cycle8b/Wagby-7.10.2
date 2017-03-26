@@ -1,0 +1,2 @@
+acl/principal/@content=お知らせ管理者
+acl/principal/@id=newsadmin

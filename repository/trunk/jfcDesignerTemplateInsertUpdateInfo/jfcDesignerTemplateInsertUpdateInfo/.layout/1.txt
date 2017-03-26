@@ -1,0 +1,4 @@
+model/displayitemgroup/@label=登録・更新情報
+model/displayitemgroup/@separate1=縦↓
+model/displayitemgroup/@separate2=
+model/displayitemgroup/@useFieldSet=四角で囲む

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- will register load time weaver needed to weave Aspect which controls activity transition,
+         TransitionGovernorAspect  -->
+    <context:load-time-weaver/>
+
+    <bean id="genericFilter" class="jp.jasminesoft.workflow.ActivityFilterInterceptor" 
+                                                            abstract="true"/>
+
+    <bean id="workflowService" class="jp.jasminesoft.workflow.WorkflowService">
+        <property name="flowController"><ref bean="flowController"/></property>
+        <property name="flowRule"><ref bean="flowRule"/></property>
+    </bean>
+
+    <bean id="flowController" class="jp.jasminesoft.workflow.WorkflowController"/>
+
+    <!-- YOU CAN CHANGE HERE -->
+    <bean id="flowRule"
+        class="jp.jasminesoft.workflow.WorkflowRuleImpl">
+        <property name="rule">
+            ${rule}
+        </property>
+    </bean>
+
+    <!--  PART 1 – Process Assembly -->
+    <aop:config>
+        <!-- we are using "bean" pointcut in conjunction with execution pointcut  
+             which will allow us to assemble some other process from another instance of
+             GenericProcessImpl -->
+        <aop:pointcut id="FlowPointcut" 
+            expression="execution(void jp.jasminesoft.workflow.GenericProcessImpl.execute(..))"/>
+        <aop:advisor pointcut-ref="FlowPointcut" advice-ref="processFilter1" order="1"/>
+        <aop:advisor pointcut-ref="FlowPointcut" advice-ref="processFilter2" order="2"/>
+        <aop:advisor pointcut-ref="FlowPointcut" advice-ref="processFilter3" order="3"/>
+    </aop:config>
+
+    <!--  PART 2 – Activity Interceptors (Filters) Configuration -->
+    <bean id="processFilter1" parent="genericFilter">
+        <constructor-arg ref="processActivity1"/>
+        <property name="facts" value="!1"/>
+    </bean>
+    <bean id="processFilter2" parent="genericFilter">
+        <constructor-arg ref="processActivity2"/>
+        <property name="facts" value="1,!2"/>
+    </bean>
+    <bean id="processFilter3" parent="genericFilter">
+        <constructor-arg ref="processActivity3"/>
+        <property name="facts" value="1,2,!3"/>
+    </bean>
+
+    <!--  PART 3 – POJO Activities -->
+    <bean id="C_S_S_Flow" class="jp.jasminesoft.workflow.GenericProcessImpl"/>
+
+    <bean id="processActivity1" 
+          class="jp.jasminesoft.workflow.ProcessConcurrenceActivity" scope="prototype">
+        <property name="fact" value="1"/>
+        <property name="condition" value="${node1cond}"/>
+    </bean>
+    <bean id="processActivity2" 
+          class="jp.jasminesoft.workflow.ProcessSequenceActivity" scope="prototype">
+        <property name="fact" value="2"/>
+    </bean>
+    <bean id="processActivity3" 
+          class="jp.jasminesoft.workflow.ProcessSequenceActivity" scope="prototype">
+        <property name="fact" value="3"/>
+    </bean>
+
+</beans>

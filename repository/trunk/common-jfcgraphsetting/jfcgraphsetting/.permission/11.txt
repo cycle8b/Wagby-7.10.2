@@ -1,0 +1,2 @@
+acl/permission/@action=admin
+acl/permission/@content=グラフ設定管理者

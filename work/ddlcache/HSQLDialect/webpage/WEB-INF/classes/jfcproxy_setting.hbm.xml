@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcproxy_setting">
+
+    <import class="JfcproxySetting"/>
+
+    <class name="JfcproxySetting" table="&quot;jfcproxy_setting&quot;">
+        <id name="id_">
+            <column name="&quot;id&quot;"/>
+        </id>
+
+        <property name="modelname_">
+            <column name="&quot;modelname&quot;"/>
+        </property>
+
+        <property name="userid_">
+            <column name="&quot;userid&quot;" not-null="true"/>
+        </property>
+
+        <property name="proxyUserid_">
+            <column name="&quot;proxy_userid&quot;"/>
+        </property>
+
+        <property name="proxyGroupid_">
+            <column name="&quot;proxy_groupid&quot;"/>
+        </property>
+
+        <property name="createuser_">
+            <column name="&quot;createuser&quot;"/>
+        </property>
+
+        <property name="useridjshparam_">
+            <column name="&quot;useridjshparam&quot;"/>
+        </property>
+
+        <list name="jgroupidjshparam_" table="&quot;jfcproxy_setting$jgroupidjshparam&quot;" cascade="all" lazy="true">
+            <key>
+                <column name="&quot;id&quot;"/>
+            </key>
+            <index type="integer">
+                <column name="&quot;jgroupidjshparamjshid&quot;"/>
+            </index>
+            <element type="int">
+                <column name="&quot;jgroupidjshparam&quot;"/>
+            </element>
+        </list>
+
+    </class>
+
+</hibernate-mapping>

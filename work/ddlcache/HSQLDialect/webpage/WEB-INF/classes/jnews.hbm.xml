@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jnews">
+
+    <import class="Jnews"/>
+
+    <class name="Jnews" table="&quot;jnews&quot;">
+        <id name="jnewsid_">
+            <column name="&quot;jnewsid&quot;"/>
+        </id>
+
+        <property name="jnewsdate_">
+            <column name="&quot;jnewsdate&quot;"/>
+        </property>
+
+        <property name="limitdate_">
+            <column name="&quot;limitdate&quot;" not-null="true"/>
+        </property>
+
+        <property name="title_">
+            <column name="&quot;title&quot;" not-null="true"/>
+        </property>
+
+        <property name="report_">
+            <column name="&quot;report&quot;" sql-type="VARCHAR(4000)"/>
+        </property>
+
+        <property name="createuser_">
+            <column name="&quot;createuser&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,8 @@
+model/displayitemgroup/@defaulttab=
+model/displayitemgroup/@label=テキスト
+model/displayitemgroup/@labelwidth=
+model/displayitemgroup/@separate1=タブ
+model/displayitemgroup/@separate2=
+model/displayitemgroup/@tabnumber=
+model/displayitemgroup/@tabvisible=
+model/displayitemgroup/@useFieldSet=

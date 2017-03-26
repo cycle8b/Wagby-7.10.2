@@ -1,0 +1,5 @@
+model/inititem/@id=7
+model/inititem/text()=取り消し
+model/inititem/text_en()=Cancel
+model/modelitem/@__linenumber=7
+presentation/displayitem/@textarea2labelForShowList=○

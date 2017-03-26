@@ -1,0 +1,2 @@
+acl/permission/@action=updatelist
+acl/permission/@content=一覧更新

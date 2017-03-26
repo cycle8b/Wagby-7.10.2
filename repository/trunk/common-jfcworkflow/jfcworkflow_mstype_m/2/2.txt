@@ -1,0 +1,5 @@
+model/inititem/@id=2
+model/inititem/text()=申請
+model/inititem/text_en()=Application
+model/modelitem/@__linenumber=2
+presentation/displayitem/@textarea2labelForShowList=○

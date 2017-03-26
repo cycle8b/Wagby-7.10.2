@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false" default-access="field"
+      package="jp.jasminesoft.wagby.model.jfcportletGraphType_m">
+
+    <import class="JfcportletGraphTypeM"/>
+
+    <class name="JfcportletGraphTypeM" table="&quot;jfcportletGraphType_m&quot;">
+        <id name="graphTypeID_">
+            <column name="&quot;graphTypeID&quot;"/>
+        </id>
+
+        <property name="graphTypeName_">
+            <column name="&quot;graphTypeName&quot;"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

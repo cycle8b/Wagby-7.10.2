@@ -1,0 +1,5 @@
+model/inititem/@id=2
+model/inititem/text()=はい
+model/inititem/text_en()=Yes
+model/modelitem/@__linenumber=2
+presentation/displayitem/@textarea2labelForShowList=○
