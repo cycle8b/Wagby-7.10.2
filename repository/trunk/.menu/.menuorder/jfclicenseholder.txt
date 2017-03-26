@@ -1,6 +1,6 @@
 action/@menuorderCalendarView=
 action/@menuorderDownload=
-action/@menuorderInsert=10512
+action/@menuorderInsert=10511
 action/@menuorderReportlist=
 action/@menuorderSelect=
 action/@menuorderTotalview=

@@ -341,7 +341,7 @@ presentation/displayitem/@type\=count_2=（個数）
 presentation/displayitem/@typeForSearch=
 presentation/displayitem/@typeForSearchMain=
 presentation/displayitem/@typeForSearchSub=
-presentation/displayitem/@typeForShow\=hidden=
+presentation/displayitem/@typeForShow\=hidden=○
 presentation/displayitem/@typeForShowList\=hidden=
 presentation/displayitem/@typeForShowListInParent\=hidden=
 presentation/displayitem/@type_ext=数字
